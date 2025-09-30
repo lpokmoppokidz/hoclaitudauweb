@@ -2,10 +2,10 @@
   "name": "web",
   "version": "1.0.0",
   "scripts": {
-    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
-    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
-    "start": "npm run start --prefix backend",
-    "preview": "npm run build && npm start"
+    "dev": "concurrently \"bun run --cwd backend dev\" \"bun run --cwd frontend dev\"",
+    "build": "npm install --prefix backend && npm install --prefix frontend && node frontend/node_modules/vite/bin/vite.js build --config frontend/vite.config.js",
+    "start": "bun run --cwd backend start",
+    "preview": "bun run build && bun run --cwd backend start"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"

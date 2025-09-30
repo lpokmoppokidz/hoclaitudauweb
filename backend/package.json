@@ -23,6 +23,6 @@
   },
   "scripts": {
     "start": "bun run src/index.ts",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon --exec bun run src/index.ts --ext ts,js,json"
   }
 }
